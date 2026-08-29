@@ -1,1 +1,17 @@
-{"name":"SL2 de bolso — Manual visual","short_name":"SL2 de bolso","description":"Guia offline para Canon EOS Rebel SL2 com lente 18–55 mm","start_url":"/","display":"standalone","background_color":"#f6f1e7","theme_color":"#f6f1e7","orientation":"portrait-primary"}
+{
+  "id": "/",
+  "name": "SL2 de bolso — Manual visual",
+  "short_name": "SL2 de bolso",
+  "description": "Guia offline para Canon EOS Rebel SL2 com lente 18–55 mm",
+  "lang": "pt-BR",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f1e7",
+  "theme_color": "#f6f1e7",
+  "categories": ["education", "photography", "lifestyle"],
+  "icons": [
+    {"src":"/icons/app-icon.png","sizes":"1254x1254","type":"image/png","purpose":"any"}
+  ]
+}
