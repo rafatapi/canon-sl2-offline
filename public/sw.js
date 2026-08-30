@@ -1,4 +1,4 @@
-const CACHE='sl2-de-bolso-v7';
+const CACHE='sl2-de-bolso-v8';
 const BASE=self.registration.scope;
 const asset=path=>new URL(path,BASE).href;
 const CORE=['./','./?source=pwa','manifest.webmanifest','icons/app-icon.png','icons/app-icon-192.png','icons/app-icon-512.png','icons/apple-touch-icon.png','images/camera-hero.webp','images/dia-noite.webp','images/lua-safari.webp','images/sl2-seletor.webp','images/sl2-lente.webp','images/sl2-traseira.webp','images/sl2-visao-superior.webp'].map(asset);
