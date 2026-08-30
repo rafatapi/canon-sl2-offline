@@ -1,7 +1,7 @@
-const CACHE='sl2-de-bolso-v6';
+const CACHE='sl2-de-bolso-v7';
 const BASE=self.registration.scope;
 const asset=path=>new URL(path,BASE).href;
-const CORE=['./','./?source=pwa','manifest.webmanifest','icons/app-icon.png','images/camera-hero.webp','images/dia-noite.webp','images/lua-safari.webp','images/sl2-seletor.webp','images/sl2-lente.webp','images/sl2-traseira.webp','images/sl2-visao-superior.webp'].map(asset);
+const CORE=['./','./?source=pwa','manifest.webmanifest','icons/app-icon.png','icons/app-icon-192.png','icons/app-icon-512.png','icons/apple-touch-icon.png','images/camera-hero.webp','images/dia-noite.webp','images/lua-safari.webp','images/sl2-seletor.webp','images/sl2-lente.webp','images/sl2-traseira.webp','images/sl2-visao-superior.webp'].map(asset);
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(CORE.map(url=>cache.add(url)))).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('message',event=>{if(event.data?.type!=='CACHE_URLS')return;const urls=[...new Set(event.data.urls||[])];event.waitUntil(caches.open(CACHE).then(cache=>Promise.allSettled(urls.map(url=>cache.add(url)))).then(()=>event.ports[0]?.postMessage({ready:true}))) });
